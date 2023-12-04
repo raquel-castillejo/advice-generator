@@ -1,13 +1,11 @@
-import { newAdvice } from './print-quote';
-
 const catchAndPrint = err => console.log(err);
-const request = url => fetch(url);
+// const request = url => fetch(url);
 
-export const fetchData = async () => {
+export const fetchData = async url => {
 	try {
-		const response = await request('https://api.adviceslip.com/advice');
+		const response = await fetch(url);
 		const data = await response.json();
-		newAdvice(data);
+		return data;
 	} catch (err) {
 		catchAndPrint(err);
 	}

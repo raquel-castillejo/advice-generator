@@ -1,4 +1,7 @@
+import { URL_API } from './constants';
 import { newAdviceBtnElement } from './dom';
-import { fetchData } from './request-quote';
+import { printNewAdvice } from './print-quote';
 
-newAdviceBtnElement.addEventListener('click', fetchData);
+newAdviceBtnElement.addEventListener('click', () => {
+	printNewAdvice(URL_API);
+});
